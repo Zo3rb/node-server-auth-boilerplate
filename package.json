@@ -1,0 +1,23 @@
+{
+  "name": "01-auth-server-bp",
+  "version": "1.0.0",
+  "description": "BoilerPlate for Express Server, Mongoose as DB & Passport-Auth",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js -e *",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jwt-simple": "^0.5.6",
+    "mongoose": "^5.9.25",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  }
+}
