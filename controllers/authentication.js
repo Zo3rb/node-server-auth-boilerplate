@@ -1,4 +1,11 @@
 const User = require('../models/user');
+const jwt = require('jwt-simple');
+
+const tokenForUser = user => {
+    const timeStamps = new Date().getDate();
+    const token = jwt.encode({ sub: user._id, iat: timeStamps }, process.env.JWT_SECRET);
+    return token;
+}
 
 const signUp = async (req, res, next) => {
     try {
@@ -17,7 +24,8 @@ const signUp = async (req, res, next) => {
         res.status(201).json({
             status: "Created",
             data: {
-                email
+                email,
+                token: tokenForUser(user)
             }
         });
 
