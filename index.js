@@ -8,7 +8,9 @@ const app = express();
 
 // BI & 3rd Party Middleware
 app.use(express.json());
-app.use(morgan('tiny'));
+if (process.env.NODE_ENV === "development") {
+    app.use(morgan('tiny'));
+}
 
 // Registering The Routers
 app.use(appRouter);

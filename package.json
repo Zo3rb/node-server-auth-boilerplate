@@ -4,8 +4,8 @@
   "description": "BoilerPlate for Express Server, Mongoose as DB & Passport-Auth",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js -e *",
-    "start": "node server.js"
+    "dev": "NODE_ENV=development nodemon server.js -e *",
+    "start": "NODE_ENV=production node server.js"
   },
   "author": "",
   "license": "ISC",

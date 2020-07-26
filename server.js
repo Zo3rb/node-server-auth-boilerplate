@@ -7,7 +7,7 @@ const DB_OPTIONS = {
     useCreateIndex: true,
     useFindAndModify: false
 };
-const DB_URI = 'mongodb://localhost:27017/auth_bp';
+const DB_URI = process.env.DB_LOCAL_URI;
 const port = process.env.PORT || 5000;
 
 mongoose.connect(DB_URI, DB_OPTIONS, () => {
