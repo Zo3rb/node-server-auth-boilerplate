@@ -6,9 +6,12 @@ const router = express.Router();
 
 // Defining The Path and it's Controller
 router.route('/')
-    .get(homeController.greeting);
+    .get(authentication.requireAuth, homeController.greeting);
 
 router.route('/signup')
     .post(authentication.signUp);
+
+router.route('/signin')
+    .post(authentication.requireSignIn, authentication.signIn);
 
 module.exports = router;
